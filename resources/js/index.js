@@ -1,13 +1,16 @@
 import { LEVEL, OBJECT_TYPE } from "./setup";
+// Classes
+import GameBoard from "./GameBoard";
 
 // Dom Elements
-const gameGrid = document.querySelector("#gmae");
+const gameGrid = document.querySelector("#game");
 const scoreTable = document.querySelector("#score");
 const startButton = document.querySelector("#start-button");
 
 // Game constants
 const POWER_PILL_TIME = 10000; // milliseconds
 const GLOBAL_SPEED = 80; // milliseconds
+const gameBoard = GameBoard.createGameBoard(gameGrid, LEVEL);
 
 // Initial Setup
 let score = 0;
