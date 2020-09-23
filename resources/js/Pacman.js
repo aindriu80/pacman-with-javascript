@@ -24,7 +24,7 @@ class Pacman {
     let nextMovePos = this.pos + this.dir.movement
 
     if (
-      objectExist(nextMovePost, OBJECT_TYPE.WALL) ||
+      objectExist(nextMovePos, OBJECT_TYPE.WALL) ||
       objectExist(nextMovePos, OBJECT_TYPE.GHOSTLAIR)
     ) {
       nextMovePos = this.pos
@@ -39,10 +39,11 @@ class Pacman {
   }
 
   setNewPos(nextMovePos) {
-    this.post = nextMovePos
+    this.pos = nextMovePos
   }
 
   handleKeyInput(e, objectExist) {
+    // console.log(e)
     let dir
 
     if (e.keyCode >= 37 && e.keyCode <= 40) {
@@ -52,7 +53,11 @@ class Pacman {
     }
 
     const nextMovePos = this.pos + dir.movement
-    if (objectExist(nextMovePos, OBJECT_TYPE.WALL)) return
+    if (
+      objectExist(nextMovePos, OBJECT_TYPE.WALL) ||
+      objectExist(nextMovePos, OBJECT_TYPE.GHOSTLAIR)
+    )
+      return
     this.dir = dir
   }
 }
