@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "setup": "0.0.3"
   }
 }
